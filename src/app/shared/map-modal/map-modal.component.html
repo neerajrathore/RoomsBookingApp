@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pick Location</ion-title>
+    <ion-buttons slot="primary">
+      <!-- we can click on the map to pick a location or we can click cancel to get out -->
+      <ion-button (click)= onCancel()>cancel</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- #map to interact the map from the typescript -->
+  <div class="map" #map></div>
+</ion-content>

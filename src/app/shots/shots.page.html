@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding [class.newBG]="state">
-  <ion-grid>
+  <!-- <ion-grid>
     <ion-row>
       <ion-col>
         <ion-button (click)=takePicture()>camera</ion-button>
@@ -17,13 +17,17 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
+      <ion-col> -->
         <!-- <button ion-button outline (click)="screenShot()">Screenshot (PIC)</button> -->
         <!-- <button ion-button outline (click)="screenShotURI()">Screenshot (URI)</button> -->
-        <img src="{{ screen }}" *ngIf="state">
+        <!-- <img src="{{ screen }}" *ngIf="state">
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
+  <!-- <ion-button (click)="fileChoose()" >Take Photo</ion-button> -->
+  <ion-button (click)="chooseFileForAndroid()" >Take Photo</ion-button>
+    <!-- <ion-button (click)="takePicture(0)" >Upload</ion-button> -->
+    <img src="{{image}}">
 
 
 </ion-content>

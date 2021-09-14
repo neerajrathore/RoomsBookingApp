@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
+import { CanvasComponent } from './canvas/canvas.component';
+import { LocationPickerComponent } from '../app/shared/pickers/location-picker/location-picker.component';
 
 const routes: Routes = [
 
   {
+    // this is starting page routing
     path: '',
-    redirectTo: 'places',
+    redirectTo: 'auth',
     pathMatch: 'full'
   },
   {
@@ -21,7 +24,7 @@ const routes: Routes = [
   {
     path: 'bookings',
     loadChildren:  () => import('./bookings/bookings.module').then( m => m.BookingsPageModule),
-    canLoad: [AuthGuard]
+    //canLoad: [AuthGuard]
   },
   {
     path: 'location',
@@ -30,6 +33,18 @@ const routes: Routes = [
   {
     path: 'shots',
     loadChildren: () => import('./shots/shots.module').then( m => m.ShotsPageModule)
+  },
+  {
+    path: 'getpost',
+    loadChildren: () => import('./getpost/getpost.module').then( m => m.GetpostPageModule)
+  },
+  {
+    path: 'canvas',
+    component: CanvasComponent
+  },
+  {
+    path: 'shared/pickers/location-picker',
+    component: LocationPickerComponent
   }
 ];
 
